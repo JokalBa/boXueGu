@@ -1,0 +1,2 @@
+# boXueGu
+easy repository
