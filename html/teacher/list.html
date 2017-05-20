@@ -63,9 +63,9 @@
                 <td>{{$value.tc_gender===1?"女":"男"}}</td>
                 <td>{{$value.tc_cellphone}}</td>
                 <td>
-                    <a href="#teacherModal" data-tc-id="{{$value.tc_id}}" data-toggle="modal" class="btn btn-info btn-xs btn-exmin">查 看</a>
+                    <a href="#teacherModal" data-tc-id="{{$value.tc_id}}" data-toggle="modal" class="btn btn-info btn-xs">查 看</a>
                     <a href="/html/teacher/edit.html?tc_id={{$value.tc_id}}" class="btn btn-info btn-xs">编 辑</a>
-                    <a href="javascript::" class="btn btn-warning btn-xs">注 销</a>
+                    <a href="javascript::" data-tc-id="{{$value.tc_id}}" data-tc-status="{{$value.tc_status}}" class="btn btn-warning btn-xs btn-isUse">{{$value.tc_status ===0?'注 销':'启 用'}}</a>
                 </td>
             </tr>
         {{/each}}
