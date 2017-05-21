@@ -32,6 +32,7 @@ require.config({
         jquery: 'lib/jquery/jquery.min',
         jquery_cookie: 'lib/jquery-cookie/jquery.cookie',
         jquery_form: 'lib/jquery-form/jquery.form',
+        jquery_region: 'lib/jquery-region/jquery.region',
 
 
         // jquery插件

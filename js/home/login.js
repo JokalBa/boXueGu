@@ -22,6 +22,14 @@ define(['jquery', 'bootstrap', 'jquery_cookie', 'jquery_form','util', 'nprogress
         url: '/v6/login',
         type: 'post',
         success: function(data) {
+            // 把用户信息使用cookie持久化存储起来，因为存储的cookie值必须是字符串，
+            // 为了让其他页面能够读取该cookie，所以配置path为根，
+            // 默认请求下存储的cookie在浏览器关闭后就会失效，为了延长有效期可以配置epires或者max-age
+            $.cookie('userInfo', JSON.stringify(data.result),{
+                path: '/',
+                //expires: new Date(Date.now() + 1000 * 60 * 60)
+                'max-age': 1000000
+            });
             location.href = "/";
         }
     });
