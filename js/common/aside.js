@@ -27,10 +27,14 @@ define(['jquery', 'jquery_cookie'], function($, ud) {
 		'/html/home/repass.html': '/index.html',
 		'/html/user/profile.html': '/html/user/list.html',
 		'/html/teacher/add.html': '/html/teacher/list.html',
-		'/html/teacher/edit.html': '/html/teacher/list.html'
+		'/html/teacher/edit.html': '/html/teacher/list.html',
+        '/html/course/course_add_step1.html': '/html/course/list.html',
+        '/html/course/course_add_step2.html': '/html/course/list.html',
+        '/html/course/course_add_step3.html': '/html/course/list.html',
     }
     var pathName=location.pathname;
     var href=pathnameObj[pathName]?pathnameObj[pathName]:pathName
     $('.aside a').removeClass('active')
-    	.filter('[href="'+ href + '"]').addClass('active');
+    	.filter('[href="'+ href + '"]').addClass('active')
+        .parentsUntil('.navs').slideDown();
 })

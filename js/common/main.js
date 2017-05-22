@@ -30,18 +30,22 @@ require.config({
 
         // 第三方模块
         jquery: 'lib/jquery/jquery.min',
+
+
+        // 依赖jquery插件
+        bootstrap: 'lib/jquery-bootstrap/js/bootstrap.min',
         jquery_cookie: 'lib/jquery-cookie/jquery.cookie',
         jquery_form: 'lib/jquery-form/jquery.form',
         jquery_region: 'lib/jquery-region/jquery.region',
-
-
-        // jquery插件
-        bootstrap: 'lib/jquery-bootstrap/js/bootstrap.min',
+        jquery_datepicker: 'lib/jquery-bootstrap-datepicker/js/bootstrap-datepicker.min',
+        jquery_datepicker_zh_CN: 'lib/jquery-bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        jquery_uploadify: 'lib/jquery-uploadify/jquery.uploadify.min',
 
 
         //不依赖jQuery的
         nprogress: 'lib/nprogress/nprogress',
         template:'lib/artTemplate/template',
+        ckeditor:'lib/ckeditor/ckeditor',
     },
 
 
@@ -53,7 +57,19 @@ require.config({
             deps: ['jquery']
         },
 
+        jquery_datepicker_zh_CN: {
+            deps: ['jquery','jquery_datepicker']
+        },
+
+        jquery_uploadify: {
+            deps: ['jquery']
+        },
+
+
         //普通AMD模块，向外暴露接口需要exports
+        ckeditor:{
+            exports:'CKEDITOR'
+        },
     }
 });
 
